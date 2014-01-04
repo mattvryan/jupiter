@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9156C7C17BFD47300FE5ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156C7B17BFD47300FE5ACC /* UIKit.framework */; };
+		C9156C7E17BFD47300FE5ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156C7D17BFD47300FE5ACC /* Foundation.framework */; };
+		C9156C8017BFD47300FE5ACC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156C7F17BFD47300FE5ACC /* CoreGraphics.framework */; };
+		C9156C8617BFD47300FE5ACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9156C8417BFD47300FE5ACC /* InfoPlist.strings */; };
+		C9156C8817BFD47300FE5ACC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9156C8717BFD47300FE5ACC /* main.m */; };
+		C9156C8C17BFD47400FE5ACC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9156C8B17BFD47400FE5ACC /* AppDelegate.m */; };
+		C9156C8E17BFD47400FE5ACC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C9156C8D17BFD47400FE5ACC /* Default.png */; };
+		C9156C9017BFD47400FE5ACC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9156C8F17BFD47400FE5ACC /* Default@2x.png */; };
+		C9156C9217BFD47400FE5ACC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9156C9117BFD47400FE5ACC /* Default-568h@2x.png */; };
+		C9156C9517BFD47400FE5ACC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9156C9317BFD47400FE5ACC /* MainStoryboard.storyboard */; };
+		C9156C9817BFD47400FE5ACC /* JupiterFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9156C9717BFD47400FE5ACC /* JupiterFirstViewController.m */; };
+		C9156C9A17BFD47400FE5ACC /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = C9156C9917BFD47400FE5ACC /* first.png */; };
+		C9156C9C17BFD47400FE5ACC /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9156C9B17BFD47400FE5ACC /* first@2x.png */; };
+		C9156C9F17BFD47400FE5ACC /* JupiterSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9156C9E17BFD47400FE5ACC /* JupiterSecondViewController.m */; };
+		C9156CA117BFD47400FE5ACC /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = C9156CA017BFD47400FE5ACC /* second.png */; };
+		C9156CA317BFD47400FE5ACC /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9156CA217BFD47400FE5ACC /* second@2x.png */; };
+		C9156CAB17BFD47400FE5ACC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156CAA17BFD47400FE5ACC /* SenTestingKit.framework */; };
+		C9156CAC17BFD47400FE5ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156C7B17BFD47300FE5ACC /* UIKit.framework */; };
+		C9156CAD17BFD47400FE5ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156C7D17BFD47300FE5ACC /* Foundation.framework */; };
+		C9156CB517BFD47400FE5ACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9156CB317BFD47400FE5ACC /* InfoPlist.strings */; };
+		C9156CB817BFD47400FE5ACC /* JupiterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9156CB717BFD47400FE5ACC /* JupiterTests.m */; };
+		C918B30917C9671C0037CB07 /* ComputeInstanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C918B30817C9671C0037CB07 /* ComputeInstanceVC.m */; };
+		C9477EF517D2C1FD002522BA /* ComputeImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9477EF417D2C1FD002522BA /* ComputeImageVC.m */; };
+		C9477EF817D2C220002522BA /* ComputeImageStorageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9477EF717D2C220002522BA /* ComputeImageStorageVC.m */; };
+		C9692D9517F790CD005649E7 /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9692D9417F790CD005649E7 /* MainTabBarVC.m */; };
+		C97FB4031878722600B448C9 /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB4021878722600B448C9 /* AWSRuntime.framework */; };
+		C97FB4051878724100B448C9 /* AWSEC2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB4041878724100B448C9 /* AWSEC2.framework */; };
+		C986D08217C0258E00F95967 /* AvailableImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C986D08117C0258E00F95967 /* AvailableImagesCollection.m */; };
+		C9CD139F17DBD1C4005DDE3E /* windows_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CD139E17DBD1C4005DDE3E /* windows_icon.png */; };
+		C9CD13A117DBD1E6005DDE3E /* Third Party Licenses in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A017DBD1E6005DDE3E /* Third Party Licenses */; };
+		C9CD13A317DBD3C2005DDE3E /* linux.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A217DBD3C2005DDE3E /* linux.png */; };
+		C9CD13A517DBD521005DDE3E /* linux_24x24.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A417DBD521005DDE3E /* linux_24x24.png */; };
+		C9E341071800B0B90017DD92 /* CredMgrVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E341061800B0B90017DD92 /* CredMgrVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9156CAE17BFD47400FE5ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9156C7017BFD47300FE5ACC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9156C7717BFD47300FE5ACC;
+			remoteInfo = Jupiter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9156C7817BFD47300FE5ACC /* Jupiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jupiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9156C7B17BFD47300FE5ACC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C9156C7D17BFD47300FE5ACC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C9156C7F17BFD47300FE5ACC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C9156C8317BFD47300FE5ACC /* Jupiter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jupiter-Info.plist"; sourceTree = "<group>"; };
+		C9156C8517BFD47300FE5ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9156C8717BFD47300FE5ACC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9156C8917BFD47300FE5ACC /* Jupiter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jupiter-Prefix.pch"; sourceTree = "<group>"; };
+		C9156C8A17BFD47400FE5ACC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C9156C8B17BFD47400FE5ACC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C9156C8D17BFD47400FE5ACC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C9156C8F17BFD47400FE5ACC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C9156C9117BFD47400FE5ACC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C9156C9417BFD47400FE5ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		C9156C9617BFD47400FE5ACC /* JupiterFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JupiterFirstViewController.h; sourceTree = "<group>"; };
+		C9156C9717BFD47400FE5ACC /* JupiterFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JupiterFirstViewController.m; sourceTree = "<group>"; };
+		C9156C9917BFD47400FE5ACC /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		C9156C9B17BFD47400FE5ACC /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		C9156C9D17BFD47400FE5ACC /* JupiterSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JupiterSecondViewController.h; sourceTree = "<group>"; };
+		C9156C9E17BFD47400FE5ACC /* JupiterSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JupiterSecondViewController.m; sourceTree = "<group>"; };
+		C9156CA017BFD47400FE5ACC /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		C9156CA217BFD47400FE5ACC /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		C9156CA917BFD47400FE5ACC /* JupiterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JupiterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9156CAA17BFD47400FE5ACC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C9156CB217BFD47400FE5ACC /* JupiterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JupiterTests-Info.plist"; sourceTree = "<group>"; };
+		C9156CB417BFD47400FE5ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9156CB617BFD47400FE5ACC /* JupiterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JupiterTests.h; sourceTree = "<group>"; };
+		C9156CB717BFD47400FE5ACC /* JupiterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JupiterTests.m; sourceTree = "<group>"; };
+		C918B30717C9671C0037CB07 /* ComputeInstanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputeInstanceVC.h; sourceTree = "<group>"; };
+		C918B30817C9671C0037CB07 /* ComputeInstanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputeInstanceVC.m; sourceTree = "<group>"; };
+		C9477EF317D2C1FD002522BA /* ComputeImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputeImageVC.h; sourceTree = "<group>"; };
+		C9477EF417D2C1FD002522BA /* ComputeImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputeImageVC.m; sourceTree = "<group>"; };
+		C9477EF617D2C220002522BA /* ComputeImageStorageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputeImageStorageVC.h; sourceTree = "<group>"; };
+		C9477EF717D2C220002522BA /* ComputeImageStorageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputeImageStorageVC.m; sourceTree = "<group>"; };
+		C9692D9317F790CD005649E7 /* MainTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
+		C9692D9417F790CD005649E7 /* MainTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
+		C97FB4021878722600B448C9 /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSRuntime.framework; path = "../../../libs/3rdparty/aws/ios/aws-ios-sdk-1.7.1/AWSRuntime.framework"; sourceTree = "<group>"; };
+		C97FB4041878724100B448C9 /* AWSEC2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSEC2.framework; path = "../../../libs/3rdparty/aws/ios/aws-ios-sdk-1.7.1/AWSEC2.framework"; sourceTree = "<group>"; };
+		C986D08017C0258E00F95967 /* AvailableImagesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableImagesCollection.h; sourceTree = "<group>"; };
+		C986D08117C0258E00F95967 /* AvailableImagesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableImagesCollection.m; sourceTree = "<group>"; };
+		C9CD139E17DBD1C4005DDE3E /* windows_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windows_icon.png; sourceTree = "<group>"; };
+		C9CD13A017DBD1E6005DDE3E /* Third Party Licenses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Third Party Licenses"; sourceTree = "<group>"; };
+		C9CD13A217DBD3C2005DDE3E /* linux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linux.png; sourceTree = "<group>"; };
+		C9CD13A417DBD521005DDE3E /* linux_24x24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linux_24x24.png; sourceTree = "<group>"; };
+		C9E341051800B0B90017DD92 /* CredMgrVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredMgrVC.h; sourceTree = "<group>"; };
+		C9E341061800B0B90017DD92 /* CredMgrVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredMgrVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9156C7517BFD47300FE5ACC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9156C7C17BFD47300FE5ACC /* UIKit.framework in Frameworks */,
+				C97FB4051878724100B448C9 /* AWSEC2.framework in Frameworks */,
+				C9156C7E17BFD47300FE5ACC /* Foundation.framework in Frameworks */,
+				C9156C8017BFD47300FE5ACC /* CoreGraphics.framework in Frameworks */,
+				C97FB4031878722600B448C9 /* AWSRuntime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9156CA517BFD47400FE5ACC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9156CAB17BFD47400FE5ACC /* SenTestingKit.framework in Frameworks */,
+				C9156CAC17BFD47400FE5ACC /* UIKit.framework in Frameworks */,
+				C9156CAD17BFD47400FE5ACC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9156C6F17BFD47300FE5ACC = {
+			isa = PBXGroup;
+			children = (
+				C9156C8117BFD47300FE5ACC /* Jupiter */,
+				C9156CB017BFD47400FE5ACC /* JupiterTests */,
+				C9156C7A17BFD47300FE5ACC /* Frameworks */,
+				C9156C7917BFD47300FE5ACC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9156C7917BFD47300FE5ACC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9156C7817BFD47300FE5ACC /* Jupiter.app */,
+				C9156CA917BFD47400FE5ACC /* JupiterTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9156C7A17BFD47300FE5ACC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C97FB4041878724100B448C9 /* AWSEC2.framework */,
+				C97FB4021878722600B448C9 /* AWSRuntime.framework */,
+				C9156C7B17BFD47300FE5ACC /* UIKit.framework */,
+				C9156C7D17BFD47300FE5ACC /* Foundation.framework */,
+				C9156C7F17BFD47300FE5ACC /* CoreGraphics.framework */,
+				C9156CAA17BFD47400FE5ACC /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9156C8117BFD47300FE5ACC /* Jupiter */ = {
+			isa = PBXGroup;
+			children = (
+				C9692D9617F79158005649E7 /* Framework */,
+				C9CD13A417DBD521005DDE3E /* linux_24x24.png */,
+				C9CD13A217DBD3C2005DDE3E /* linux.png */,
+				C9CD139E17DBD1C4005DDE3E /* windows_icon.png */,
+				C9156C8A17BFD47400FE5ACC /* AppDelegate.h */,
+				C9156C8B17BFD47400FE5ACC /* AppDelegate.m */,
+				C9156C9317BFD47400FE5ACC /* MainStoryboard.storyboard */,
+				C9156C9617BFD47400FE5ACC /* JupiterFirstViewController.h */,
+				C9156C9717BFD47400FE5ACC /* JupiterFirstViewController.m */,
+				C9156C9917BFD47400FE5ACC /* first.png */,
+				C9156C9B17BFD47400FE5ACC /* first@2x.png */,
+				C9156C9D17BFD47400FE5ACC /* JupiterSecondViewController.h */,
+				C9156C9E17BFD47400FE5ACC /* JupiterSecondViewController.m */,
+				C9156CA017BFD47400FE5ACC /* second.png */,
+				C9156CA217BFD47400FE5ACC /* second@2x.png */,
+				C9156C8217BFD47300FE5ACC /* Supporting Files */,
+				C9CD13A017DBD1E6005DDE3E /* Third Party Licenses */,
+			);
+			path = Jupiter;
+			sourceTree = "<group>";
+		};
+		C9156C8217BFD47300FE5ACC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9156C8317BFD47300FE5ACC /* Jupiter-Info.plist */,
+				C9156C8417BFD47300FE5ACC /* InfoPlist.strings */,
+				C9156C8717BFD47300FE5ACC /* main.m */,
+				C9156C8917BFD47300FE5ACC /* Jupiter-Prefix.pch */,
+				C9156C8D17BFD47400FE5ACC /* Default.png */,
+				C9156C8F17BFD47400FE5ACC /* Default@2x.png */,
+				C9156C9117BFD47400FE5ACC /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9156CB017BFD47400FE5ACC /* JupiterTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9156CB617BFD47400FE5ACC /* JupiterTests.h */,
+				C9156CB717BFD47400FE5ACC /* JupiterTests.m */,
+				C9156CB117BFD47400FE5ACC /* Supporting Files */,
+			);
+			path = JupiterTests;
+			sourceTree = "<group>";
+		};
+		C9156CB117BFD47400FE5ACC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9156CB217BFD47400FE5ACC /* JupiterTests-Info.plist */,
+				C9156CB317BFD47400FE5ACC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9692D9617F79158005649E7 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				C9E341091800B5940017DD92 /* Models */,
+				C9E341081800B58A0017DD92 /* Controllers */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		C9E341081800B58A0017DD92 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9692D9317F790CD005649E7 /* MainTabBarVC.h */,
+				C9692D9417F790CD005649E7 /* MainTabBarVC.m */,
+				C9E341051800B0B90017DD92 /* CredMgrVC.h */,
+				C9E341061800B0B90017DD92 /* CredMgrVC.m */,
+				C918B30717C9671C0037CB07 /* ComputeInstanceVC.h */,
+				C918B30817C9671C0037CB07 /* ComputeInstanceVC.m */,
+				C9477EF317D2C1FD002522BA /* ComputeImageVC.h */,
+				C9477EF417D2C1FD002522BA /* ComputeImageVC.m */,
+				C9477EF617D2C220002522BA /* ComputeImageStorageVC.h */,
+				C9477EF717D2C220002522BA /* ComputeImageStorageVC.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C9E341091800B5940017DD92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C986D08017C0258E00F95967 /* AvailableImagesCollection.h */,
+				C986D08117C0258E00F95967 /* AvailableImagesCollection.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9156C7717BFD47300FE5ACC /* Jupiter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9156CBB17BFD47400FE5ACC /* Build configuration list for PBXNativeTarget "Jupiter" */;
+			buildPhases = (
+				C9156C7417BFD47300FE5ACC /* Sources */,
+				C9156C7517BFD47300FE5ACC /* Frameworks */,
+				C9156C7617BFD47300FE5ACC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jupiter;
+			productName = Jupiter;
+			productReference = C9156C7817BFD47300FE5ACC /* Jupiter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9156CA817BFD47400FE5ACC /* JupiterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9156CBE17BFD47400FE5ACC /* Build configuration list for PBXNativeTarget "JupiterTests" */;
+			buildPhases = (
+				C9156CA417BFD47400FE5ACC /* Sources */,
+				C9156CA517BFD47400FE5ACC /* Frameworks */,
+				C9156CA617BFD47400FE5ACC /* Resources */,
+				C9156CA717BFD47400FE5ACC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9156CAF17BFD47400FE5ACC /* PBXTargetDependency */,
+			);
+			name = JupiterTests;
+			productName = JupiterTests;
+			productReference = C9156CA917BFD47400FE5ACC /* JupiterTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9156C7017BFD47300FE5ACC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Jupiter;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Seventeen Stones";
+			};
+			buildConfigurationList = C9156C7317BFD47300FE5ACC /* Build configuration list for PBXProject "Jupiter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C9156C6F17BFD47300FE5ACC;
+			productRefGroup = C9156C7917BFD47300FE5ACC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9156C7717BFD47300FE5ACC /* Jupiter */,
+				C9156CA817BFD47400FE5ACC /* JupiterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9156C7617BFD47300FE5ACC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9156C8617BFD47300FE5ACC /* InfoPlist.strings in Resources */,
+				C9156C8E17BFD47400FE5ACC /* Default.png in Resources */,
+				C9156C9017BFD47400FE5ACC /* Default@2x.png in Resources */,
+				C9156C9217BFD47400FE5ACC /* Default-568h@2x.png in Resources */,
+				C9156C9517BFD47400FE5ACC /* MainStoryboard.storyboard in Resources */,
+				C9156C9A17BFD47400FE5ACC /* first.png in Resources */,
+				C9156C9C17BFD47400FE5ACC /* first@2x.png in Resources */,
+				C9156CA117BFD47400FE5ACC /* second.png in Resources */,
+				C9156CA317BFD47400FE5ACC /* second@2x.png in Resources */,
+				C9CD139F17DBD1C4005DDE3E /* windows_icon.png in Resources */,
+				C9CD13A117DBD1E6005DDE3E /* Third Party Licenses in Resources */,
+				C9CD13A317DBD3C2005DDE3E /* linux.png in Resources */,
+				C9CD13A517DBD521005DDE3E /* linux_24x24.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9156CA617BFD47400FE5ACC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9156CB517BFD47400FE5ACC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9156CA717BFD47400FE5ACC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9156C7417BFD47300FE5ACC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9156C8817BFD47300FE5ACC /* main.m in Sources */,
+				C9156C8C17BFD47400FE5ACC /* AppDelegate.m in Sources */,
+				C9156C9817BFD47400FE5ACC /* JupiterFirstViewController.m in Sources */,
+				C9156C9F17BFD47400FE5ACC /* JupiterSecondViewController.m in Sources */,
+				C986D08217C0258E00F95967 /* AvailableImagesCollection.m in Sources */,
+				C918B30917C9671C0037CB07 /* ComputeInstanceVC.m in Sources */,
+				C9477EF517D2C1FD002522BA /* ComputeImageVC.m in Sources */,
+				C9477EF817D2C220002522BA /* ComputeImageStorageVC.m in Sources */,
+				C9692D9517F790CD005649E7 /* MainTabBarVC.m in Sources */,
+				C9E341071800B0B90017DD92 /* CredMgrVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9156CA417BFD47400FE5ACC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9156CB817BFD47400FE5ACC /* JupiterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9156CAF17BFD47400FE5ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9156C7717BFD47300FE5ACC /* Jupiter */;
+			targetProxy = C9156CAE17BFD47400FE5ACC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9156C8417BFD47300FE5ACC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9156C8517BFD47300FE5ACC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C9156C9317BFD47400FE5ACC /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9156C9417BFD47400FE5ACC /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		C9156CB317BFD47400FE5ACC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9156CB417BFD47400FE5ACC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9156CB917BFD47400FE5ACC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C9156CBA17BFD47400FE5ACC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9156CBC17BFD47400FE5ACC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"/Users/matt/Devel/seventeenstones/jupiter/libs/3rdparty/aws/ios/aws-ios-sdk-1.7.1",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jupiter/Jupiter-Prefix.pch";
+				INFOPLIST_FILE = "Jupiter/Jupiter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C9156CBD17BFD47400FE5ACC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"/Users/matt/Devel/seventeenstones/jupiter/libs/3rdparty/aws/ios/aws-ios-sdk-1.7.1",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jupiter/Jupiter-Prefix.pch";
+				INFOPLIST_FILE = "Jupiter/Jupiter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C9156CBF17BFD47400FE5ACC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Jupiter.app/Jupiter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jupiter/Jupiter-Prefix.pch";
+				INFOPLIST_FILE = "JupiterTests/JupiterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C9156CC017BFD47400FE5ACC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Jupiter.app/Jupiter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jupiter/Jupiter-Prefix.pch";
+				INFOPLIST_FILE = "JupiterTests/JupiterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9156C7317BFD47300FE5ACC /* Build configuration list for PBXProject "Jupiter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9156CB917BFD47400FE5ACC /* Debug */,
+				C9156CBA17BFD47400FE5ACC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9156CBB17BFD47400FE5ACC /* Build configuration list for PBXNativeTarget "Jupiter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9156CBC17BFD47400FE5ACC /* Debug */,
+				C9156CBD17BFD47400FE5ACC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9156CBE17BFD47400FE5ACC /* Build configuration list for PBXNativeTarget "JupiterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9156CBF17BFD47400FE5ACC /* Debug */,
+				C9156CC017BFD47400FE5ACC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9156C7017BFD47300FE5ACC /* Project object */;
+}
