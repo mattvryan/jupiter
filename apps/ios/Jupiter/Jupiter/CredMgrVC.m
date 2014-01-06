@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Seventeen Stones. All rights reserved.
 //
 
+#import <AWSRuntime/AWSRuntime.h>
+
 #import "CredMgrVC.h"
 
 #define AWS_ACCESS_KEY_TEXT_FIELD_RID @"AWSAccessKeyTF"
@@ -47,16 +49,19 @@
     {
         self.credentials = [[NSMutableArray alloc] init];
     }
-    [self.credentials addObject:@"Default"];
-    [self.credentials addObject:@"Custom"];
+    [self.credentials addObject:@"  (NONE)  "];
+//    [self.credentials addObject:@"Default"];
+//    [self.credentials addObject:@"Custom"];
 
     if (nil == self.textFieldPlaceholders)
     {
-        self.textFieldPlaceholders = [[NSDictionary alloc] initWithObjectsAndKeys:AWS_ACCESS_KEY_TEXT, AWS_ACCESS_KEY_TEXT_FIELD_RID,
-            AWS_SECRET_KEY_TEXT,
-            AWS_SECRET_KEY_TEXT_FIELD_RID,
-            CREDENTIAL_NAME_TEXT,
-            CREDENTIAL_NAME_TEXT_FIELD_RID,
+        self.textFieldPlaceholders = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                      AWS_ACCESS_KEY_TEXT,
+                                      AWS_ACCESS_KEY_TEXT_FIELD_RID,
+                                      AWS_SECRET_KEY_TEXT,
+                                      AWS_SECRET_KEY_TEXT_FIELD_RID,
+                                      CREDENTIAL_NAME_TEXT,
+                                      CREDENTIAL_NAME_TEXT_FIELD_RID,
                                       nil];
     }
 }
@@ -94,17 +99,40 @@
 
 - (IBAction)onAccessKeyTextFieldChanged:(UITextField *)sender
 {
-//    self.loginButton.enabled =
-//        ( (self.accessKeyTextField.text.length > 0 &&
-//           ![self.accessKeyTextField.text isEqualToString:AWS_ACCESS_KEY_TEXT]) &&
-//          (self.secretKeyTextField.text.length > 0 &&
-//           ![self.secretKeyTextField.text isEqualToString:AWS_SECRET_KEY_TEXT]) &&
-//          (self.credentialNameTextField.text.length > 0 &&
-//           ![self.credentialNameTextField.text isEqualToString:CREDENTIAL_NAME_TEXT]) );
+    self.loginButton.enabled = [self haveNewCredential];
 }
 
 - (IBAction)onTextFieldEditingDidEnd:(UITextField *)sender
 {
+}
+
+- (IBAction)onLoginClicked:(UIButton *)sender
+{
+    if ([self haveNewCredential])
+    {
+        AmazonCredentials * cred = [[AmazonCredentials alloc]
+                                    initWithAccessKey:self.accessKeyTextField.text
+                                    withSecretKey:self.secretKeyTextField.text];
+        
+        // Save the credential here
+    }
+    else
+    {
+        // Load the credential by name from the cache
+    }
+    
+    // Make this credential the active credential before the segue occurs
+}
+
+- (BOOL)haveNewCredential
+{
+    return ( (self.accessKeyTextField.text.length > 0
+              && ![self.accessKeyTextField.text isEqualToString:AWS_ACCESS_KEY_TEXT])
+            && (self.secretKeyTextField.text.length > 0
+                && ![self.secretKeyTextField.text isEqualToString:AWS_SECRET_KEY_TEXT])
+//         && (self.credentialNameTextField.text.length > 0
+//             && ![self.credentialNameTextField.text isEqualToString:CREDENTIAL_NAME_TEXT])
+            );
 }
 
 @end
