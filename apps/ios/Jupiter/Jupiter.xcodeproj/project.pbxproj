@@ -35,6 +35,7 @@
 		C97FB4031878722600B448C9 /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB4021878722600B448C9 /* AWSRuntime.framework */; };
 		C97FB4051878724100B448C9 /* AWSEC2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB4041878724100B448C9 /* AWSEC2.framework */; };
 		C986D08217C0258E00F95967 /* AvailableImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C986D08117C0258E00F95967 /* AvailableImagesCollection.m */; };
+		C9B1C38B187C4470006A4530 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B1C38A187C4470006A4530 /* Configuration.m */; };
 		C9CD139F17DBD1C4005DDE3E /* windows_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CD139E17DBD1C4005DDE3E /* windows_icon.png */; };
 		C9CD13A117DBD1E6005DDE3E /* Third Party Licenses in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A017DBD1E6005DDE3E /* Third Party Licenses */; };
 		C9CD13A317DBD3C2005DDE3E /* linux.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A217DBD3C2005DDE3E /* linux.png */; };
@@ -92,6 +93,8 @@
 		C97FB4041878724100B448C9 /* AWSEC2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSEC2.framework; path = "../../../libs/3rdparty/aws/ios/aws-ios-sdk-1.7.1/AWSEC2.framework"; sourceTree = "<group>"; };
 		C986D08017C0258E00F95967 /* AvailableImagesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableImagesCollection.h; sourceTree = "<group>"; };
 		C986D08117C0258E00F95967 /* AvailableImagesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableImagesCollection.m; sourceTree = "<group>"; };
+		C9B1C389187C4470006A4530 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		C9B1C38A187C4470006A4530 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		C9CD139E17DBD1C4005DDE3E /* windows_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windows_icon.png; sourceTree = "<group>"; };
 		C9CD13A017DBD1E6005DDE3E /* Third Party Licenses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Third Party Licenses"; sourceTree = "<group>"; };
 		C9CD13A217DBD3C2005DDE3E /* linux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linux.png; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 			children = (
 				C9E341091800B5940017DD92 /* Models */,
 				C9E341081800B58A0017DD92 /* Controllers */,
+				C9B1C389187C4470006A4530 /* Configuration.h */,
+				C9B1C38A187C4470006A4530 /* Configuration.m */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				C9477EF817D2C220002522BA /* ComputeImageStorageVC.m in Sources */,
 				C9692D9517F790CD005649E7 /* MainTabBarVC.m in Sources */,
 				C9E341071800B0B90017DD92 /* CredMgrVC.m in Sources */,
+				C9B1C38B187C4470006A4530 /* Configuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
