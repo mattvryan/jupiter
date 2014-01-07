@@ -27,11 +27,11 @@
 		C9156CAC17BFD47400FE5ACC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156C7B17BFD47300FE5ACC /* UIKit.framework */; };
 		C9156CAD17BFD47400FE5ACC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9156C7D17BFD47300FE5ACC /* Foundation.framework */; };
 		C9156CB517BFD47400FE5ACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9156CB317BFD47400FE5ACC /* InfoPlist.strings */; };
-		C9156CB817BFD47400FE5ACC /* JupiterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9156CB717BFD47400FE5ACC /* JupiterTests.m */; };
 		C918B30917C9671C0037CB07 /* ComputeInstanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C918B30817C9671C0037CB07 /* ComputeInstanceVC.m */; };
 		C9477EF517D2C1FD002522BA /* ComputeImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9477EF417D2C1FD002522BA /* ComputeImageVC.m */; };
 		C9477EF817D2C220002522BA /* ComputeImageStorageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9477EF717D2C220002522BA /* ComputeImageStorageVC.m */; };
 		C9692D9517F790CD005649E7 /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9692D9417F790CD005649E7 /* MainTabBarVC.m */; };
+		C977A175187C3CDA00CC3958 /* ConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C977A174187C3CDA00CC3958 /* ConfigurationTests.m */; };
 		C97FB4031878722600B448C9 /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB4021878722600B448C9 /* AWSRuntime.framework */; };
 		C97FB4051878724100B448C9 /* AWSEC2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB4041878724100B448C9 /* AWSEC2.framework */; };
 		C986D08217C0258E00F95967 /* AvailableImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C986D08117C0258E00F95967 /* AvailableImagesCollection.m */; };
@@ -79,8 +79,6 @@
 		C9156CAA17BFD47400FE5ACC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C9156CB217BFD47400FE5ACC /* JupiterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JupiterTests-Info.plist"; sourceTree = "<group>"; };
 		C9156CB417BFD47400FE5ACC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C9156CB617BFD47400FE5ACC /* JupiterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JupiterTests.h; sourceTree = "<group>"; };
-		C9156CB717BFD47400FE5ACC /* JupiterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JupiterTests.m; sourceTree = "<group>"; };
 		C918B30717C9671C0037CB07 /* ComputeInstanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputeInstanceVC.h; sourceTree = "<group>"; };
 		C918B30817C9671C0037CB07 /* ComputeInstanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputeInstanceVC.m; sourceTree = "<group>"; };
 		C9477EF317D2C1FD002522BA /* ComputeImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputeImageVC.h; sourceTree = "<group>"; };
@@ -89,6 +87,7 @@
 		C9477EF717D2C220002522BA /* ComputeImageStorageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputeImageStorageVC.m; sourceTree = "<group>"; };
 		C9692D9317F790CD005649E7 /* MainTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
 		C9692D9417F790CD005649E7 /* MainTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
+		C977A174187C3CDA00CC3958 /* ConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationTests.m; sourceTree = "<group>"; };
 		C97FB4021878722600B448C9 /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSRuntime.framework; path = "../../../libs/3rdparty/aws/ios/aws-ios-sdk-1.7.1/AWSRuntime.framework"; sourceTree = "<group>"; };
 		C97FB4041878724100B448C9 /* AWSEC2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSEC2.framework; path = "../../../libs/3rdparty/aws/ios/aws-ios-sdk-1.7.1/AWSEC2.framework"; sourceTree = "<group>"; };
 		C986D08017C0258E00F95967 /* AvailableImagesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableImagesCollection.h; sourceTree = "<group>"; };
@@ -200,9 +199,8 @@
 		C9156CB017BFD47400FE5ACC /* JupiterTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9156CB617BFD47400FE5ACC /* JupiterTests.h */,
-				C9156CB717BFD47400FE5ACC /* JupiterTests.m */,
 				C9156CB117BFD47400FE5ACC /* Supporting Files */,
+				C977A174187C3CDA00CC3958 /* ConfigurationTests.m */,
 			);
 			path = JupiterTests;
 			sourceTree = "<group>";
@@ -387,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9156CB817BFD47400FE5ACC /* JupiterTests.m in Sources */,
+				C977A175187C3CDA00CC3958 /* ConfigurationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
