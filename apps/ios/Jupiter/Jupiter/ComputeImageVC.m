@@ -33,12 +33,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    // TODO: Remove hard-coded access key and secret key
-    //self.credentials.accessKey = @"AKIAIX5QPZSJA5AS5GDQ";
-    //self.credentials.secretKey = @"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";
+    //self.credentials.accessKey = @"my_access_key";
+    //self.credentials.secretKey = @"my_secret_key";
     AmazonEC2Client* ec2Client = [[AmazonEC2Client alloc]
-                                  initWithAccessKey:@"AKIAIX5QPZSJA5AS5GDQ"
-                                  withSecretKey:@"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"];
+                                  initWithAccessKey:self.credentials.accessKey
+                                  withSecretKey:self.credentials.secretKey];
     EC2DescribeImagesRequest* req = [[EC2DescribeImagesRequest alloc] init];
     [req addFilter:[[EC2Filter alloc] initWithName:@"owner-alias"
                                          andValues:[[NSMutableArray alloc]
