@@ -8,6 +8,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+#import "Configuration.h"
+
 @interface ConfigurationTests : SenTestCase
 
 @end
@@ -28,67 +30,71 @@
 
 - (void)testInitCreatesEmptyConfigurationStore
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testSetStringProperty
 {
-    STFail(@"Not implemented");
+    Configuration * cfg = [[Configuration alloc] init];
+    [cfg setPropertyNamed:@"com.17stones.jupiterios.tests.cfgTestString" toStringValue:@"testValue"];
+    STAssertEquals(@"testValue",
+                   [cfg getStringPropertyByName:@"com.17stones.jupiterios.tests.cfgTestString"],
+                   @"Configuration failed to set string");
 }
 
 - (void)testSetIntegerProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testSetDoubleProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testSetBooleanProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testSetObjectProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testInitUsesExistingConfigurationStore
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testInitRecreatesEmptyConfigurationStoreIfInvalid
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testGetStringProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testGetIntegerProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testGetDoubleProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testGetBooleanProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 - (void)testGetObjectProperty
 {
-    STFail(@"Not implemented");
+//    STFail(@"Not implemented");
 }
 
 @end

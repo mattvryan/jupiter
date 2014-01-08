@@ -10,11 +10,11 @@
 
 @interface Configuration : NSObject
 
-- (void)setPropertyNamed:(NSString*)propertyName toStringValue:(NSString*)propertyValue;
-- (void)setPropertyNamed:(NSString*)propertyName toIntegerValue:(long)propertyValue;
-- (void)setPropertyNamed:(NSString*)propertyName toFloatValue:(double)propertyValue;
-- (void)setPropertyNamed:(NSString*)propertyName toBooleanValue:(bool)propertyValue;
-- (void)setPropertyNamed:(NSString*)propertyName toObjectValue:(NSObject*)propertyValue;
+- (void) setPropertyNamed:(NSString*)propertyName toStringValue:(NSString*)propertyValue;
+- (void) setPropertyNamed:(NSString*)propertyName toIntegerValue:(long)propertyValue;
+- (void) setPropertyNamed:(NSString*)propertyName toFloatValue:(double)propertyValue;
+- (void) setPropertyNamed:(NSString*)propertyName toBooleanValue:(bool)propertyValue;
+- (void) setPropertyNamed:(NSString*)propertyName toObjectValue:(NSObject*)propertyValue;
 
 - (NSString*) getStringPropertyByName:  (NSString*)propertyName;
 - (long)      getIntegerPropertyByName: (NSString*)propertyName;
