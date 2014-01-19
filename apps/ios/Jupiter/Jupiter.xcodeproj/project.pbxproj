@@ -40,6 +40,7 @@
 		C9CD13A117DBD1E6005DDE3E /* Third Party Licenses in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A017DBD1E6005DDE3E /* Third Party Licenses */; };
 		C9CD13A317DBD3C2005DDE3E /* linux.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A217DBD3C2005DDE3E /* linux.png */; };
 		C9CD13A517DBD521005DDE3E /* linux_24x24.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CD13A417DBD521005DDE3E /* linux_24x24.png */; };
+		C9D1E232188B69B700406286 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D1E231188B69B700406286 /* libsqlite3.0.dylib */; };
 		C9E341071800B0B90017DD92 /* CredMgrVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E341061800B0B90017DD92 /* CredMgrVC.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		C9CD13A017DBD1E6005DDE3E /* Third Party Licenses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Third Party Licenses"; sourceTree = "<group>"; };
 		C9CD13A217DBD3C2005DDE3E /* linux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linux.png; sourceTree = "<group>"; };
 		C9CD13A417DBD521005DDE3E /* linux_24x24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linux_24x24.png; sourceTree = "<group>"; };
+		C9D1E231188B69B700406286 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		C9E341051800B0B90017DD92 /* CredMgrVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredMgrVC.h; sourceTree = "<group>"; };
 		C9E341061800B0B90017DD92 /* CredMgrVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredMgrVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D1E232188B69B700406286 /* libsqlite3.0.dylib in Frameworks */,
 				C9156C7C17BFD47300FE5ACC /* UIKit.framework in Frameworks */,
 				C97FB4051878724100B448C9 /* AWSEC2.framework in Frameworks */,
 				C9156C7E17BFD47300FE5ACC /* Foundation.framework in Frameworks */,
@@ -151,6 +154,7 @@
 		C9156C7A17BFD47300FE5ACC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9D1E231188B69B700406286 /* libsqlite3.0.dylib */,
 				C97FB4041878724100B448C9 /* AWSEC2.framework */,
 				C97FB4021878722600B448C9 /* AWSRuntime.framework */,
 				C9156C7B17BFD47300FE5ACC /* UIKit.framework */,

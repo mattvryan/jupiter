@@ -57,11 +57,6 @@
 //    STFail(@"Not implemented");
 }
 
-- (void)testSetObjectProperty
-{
-//    STFail(@"Not implemented");
-}
-
 - (void)testInitUsesExistingConfigurationStore
 {
 //    STFail(@"Not implemented");
@@ -88,11 +83,6 @@
 }
 
 - (void)testGetBooleanProperty
-{
-//    STFail(@"Not implemented");
-}
-
-- (void)testGetObjectProperty
 {
 //    STFail(@"Not implemented");
 }
