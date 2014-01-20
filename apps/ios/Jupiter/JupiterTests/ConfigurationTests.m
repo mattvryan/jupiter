@@ -33,13 +33,26 @@
 //    STFail(@"Not implemented");
 }
 
+- (void)testInitDoesntCreateMultipleVersionRows
+{
+    {
+        Configuration * cfg = [[Configuration alloc] init];
+    }
+    {
+        Configuration * cfg = [[Configuration alloc] init];
+        NSDictionary * results = [cfg rawQueryWithSql:@"select * from meta"
+                                            forFields:[NSArray arrayWithObjects:@"id", @"version", nil]];
+        STAssertTrue([[results objectForKey:@"id"] isEqualToString:@"1"], @"meta row id != 1");
+        STAssertTrue([[results objectForKey:@"version"] isEqualToString:@"1.0"], @"meta version != 1.0");
+    }
+}
+
 - (void)testSetStringProperty
 {
     Configuration * cfg = [[Configuration alloc] init];
     [cfg setPropertyNamed:@"com.17stones.jupiterios.tests.cfgTestString" toStringValue:@"testValue"];
-    STAssertEquals(@"testValue",
-                   [cfg getStringPropertyByName:@"com.17stones.jupiterios.tests.cfgTestString"],
-                   @"Configuration failed to set string");
+    NSString * result = [cfg getStringPropertyByName:@"com.17stones.jupiterios.tests.cfgTestString"];
+    STAssertTrue([result isEqualToString:@"testValue"], @"Configuration failed to set string");
 }
 
 - (void)testSetIntegerProperty

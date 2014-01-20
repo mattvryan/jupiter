@@ -49,20 +49,35 @@
 
 - (int) initializeConfigDb
 {
-    NSArray * tableNames = [NSArray arrayWithObjects:@"meta", "properties", nil];
+    NSArray * tableNames = [NSArray arrayWithObjects:@"meta", @"properties", nil];
     NSArray * tableFields = [NSArray arrayWithObjects:@"version TEXT", @"propertyName TEXT, propertyValue TEXT", nil];
     NSDictionary * tables = [NSDictionary dictionaryWithObjects:tableFields forKeys:tableNames];
     
     for (NSString * tableName in [tables keyEnumerator])
     {
+        // First look for the version table
+        // If you can't select from it then create the table
+        // If you can, then verify the version - then update it if necessary
         int rv = [self sqliteCreateTable:tableName fields:[tables objectForKey:tableName]];
-        if (0 == rv)
-        {
-            rv = [self sqliteInsertIntoTable:@"meta" fields:@"version" values:@"'1.0'"];
-        }
         if (0 != rv)
         {
             return rv;
+        }
+        NSDictionary * meta = [self rawQueryWithSql:@"select * from meta"
+                                          forFields:[NSArray arrayWithObjects:@"id", @"version", nil]];
+        if (nil == meta)
+        {
+            rv = [self sqliteInsertIntoTable:@"meta" fields:@"version" values:@"'1.0'"];
+        }
+        else if (! [[meta objectForKey:@"id"] isEqualToString:@"1"])
+        {
+            NSLog(@"Unexpected row count in configuration meta - expected id 1 but found id %@", [meta objectForKey:@"id"]);
+            return -1;
+        }
+        else if (! [[meta objectForKey:@"version"] isEqualToString:@"1.0"])
+        {
+            NSLog(@"Unexpected configuration version - expected 1.0 but found %@", [meta objectForKey:@"version"]);
+            return -1;
         }
     }
     return 0;
@@ -73,7 +88,7 @@
 {
     [self sqliteInsertIntoTable:@"properties"
                          fields:@"propertyName, propertyValue"
-                         values:[NSString stringWithFormat:@"%@, %@", propertyName, propertyValue]];
+                         values:[NSString stringWithFormat:@"'%@', '%@'", propertyName, propertyValue]];
 }
 
 - (void) setPropertyNamed:(NSString*)propertyName toIntegerValue:(int)propertyValue
@@ -94,7 +109,7 @@
 - (NSString*) getStringPropertyByName:(NSString*)propertyName
 {
     NSDictionary * results = [self sqliteSelectFromTable:@"properties"
-                                                  fields:@"propertyValue"
+                                                  fields:[NSArray arrayWithObject:@"propertyValue"]
                                                  clauses:[NSString stringWithFormat:@"propertyName=%@", propertyName]];
     if (nil != results)
     {
@@ -136,24 +151,33 @@
 
 - (int) sqliteInsertIntoTable:(NSString *)table fields:(NSString *)fields values:(NSString *)values
 {
+    NSString * sql = [NSString stringWithFormat:self.insertFmt, table, fields, values];
     int rv = sqlite3_exec(_db, [[NSString stringWithFormat:self.insertFmt, table, fields, values] UTF8String],
                           NULL, NULL, NULL);
     if (0 != rv)
     {
         NSLog(@"Failed to insert fields \"%@\" into  table \"%@\"", fields, table);
+        NSLog(@"Error: %s", sqlite3_errmsg(_db));
     }
     return rv;
 }
 
 - (NSDictionary *) sqliteSelectFromTable:(NSString*)table fields:(NSArray*)fields clauses:(NSString *)clauses
 {
-    sqlite3_stmt * preparedStatement;
     NSString * selectStatement = [NSString stringWithFormat:self.selectFmt,
                                   [fields componentsJoinedByString:@","],
                                   table, clauses];
+    return [self rawQueryWithSql:selectStatement forFields:fields];
+}
+
+
+- (NSDictionary*) rawQueryWithSql:(NSString*)sql forFields:(NSArray*)fields
+{
+    sqlite3_stmt * preparedStatement;
+
     NSMutableDictionary * results = [[NSMutableDictionary alloc] init];
     
-    int rv = sqlite3_prepare(_db, [selectStatement UTF8String],
+    int rv = sqlite3_prepare(_db, [sql UTF8String],
                              -1, &preparedStatement, nil);
     if (0 == rv)
     {
@@ -175,7 +199,7 @@
     }
     else
     {
-        NSLog(@"Failed to prepare select statement: %@", selectStatement);
+        NSLog(@"Failed to prepare select statement: %@", sql);
     }
     
     return [results count] > 0 ? results : nil;

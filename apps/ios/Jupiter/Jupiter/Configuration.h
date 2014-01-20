@@ -20,4 +20,6 @@
 - (double)    getFloatPropertyByName:   (NSString*)propertyName;
 - (bool)      getBooleanPropertyByName: (NSString*)propertyName;
 
+- (NSDictionary*) rawQueryWithSql:(NSString*)sql forFields:(NSArray*)fields;
+
 @end
