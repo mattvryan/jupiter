@@ -50,7 +50,7 @@
 - (int) initializeConfigDb
 {
     NSArray * tableNames = [NSArray arrayWithObjects:@"meta", @"properties", nil];
-    NSArray * tableFields = [NSArray arrayWithObjects:@"version TEXT", @"propertyName TEXT, propertyValue TEXT", nil];
+    NSArray * tableFields = [NSArray arrayWithObjects:@"version TEXT", @"propertyName TEXT UNIQUE, propertyValue TEXT", nil];
     NSDictionary * tables = [NSDictionary dictionaryWithObjects:tableFields forKeys:tableNames];
     
     for (NSString * tableName in [tables keyEnumerator])
@@ -110,10 +110,10 @@
 {
     NSDictionary * results = [self sqliteSelectFromTable:@"properties"
                                                   fields:[NSArray arrayWithObject:@"propertyValue"]
-                                                 clauses:[NSString stringWithFormat:@"propertyName=%@", propertyName]];
+                                                 clauses:[NSString stringWithFormat:@"propertyName='%@'", propertyName]];
     if (nil != results)
     {
-        id result = [results objectForKey:propertyName];
+        id result = [results objectForKey:@"propertyValue"];
         if (nil != result)
         {
             return (NSString *)result;
@@ -152,8 +152,7 @@
 - (int) sqliteInsertIntoTable:(NSString *)table fields:(NSString *)fields values:(NSString *)values
 {
     NSString * sql = [NSString stringWithFormat:self.insertFmt, table, fields, values];
-    int rv = sqlite3_exec(_db, [[NSString stringWithFormat:self.insertFmt, table, fields, values] UTF8String],
-                          NULL, NULL, NULL);
+    int rv = sqlite3_exec(_db, [sql UTF8String], NULL, NULL, NULL);
     if (0 != rv)
     {
         NSLog(@"Failed to insert fields \"%@\" into  table \"%@\"", fields, table);
@@ -162,7 +161,9 @@
     return rv;
 }
 
-- (NSDictionary *) sqliteSelectFromTable:(NSString*)table fields:(NSArray*)fields clauses:(NSString *)clauses
+- (NSDictionary *) sqliteSelectFromTable:(NSString*)table
+                                  fields:(NSArray*)fields
+                                 clauses:(NSString *)clauses
 {
     NSString * selectStatement = [NSString stringWithFormat:self.selectFmt,
                                   [fields componentsJoinedByString:@","],
