@@ -10,6 +10,15 @@
 
 #import "Configuration.h"
 
+#define STRING_KEY @"com.17stones.jupiterios.tests.cfgTestString"
+#define INT_KEY    @"com.17stones.jupiterios.tests.cfgTestInt"
+#define DOUBLE_KEY @"com.17stones.jupiterios.tests.cfgTestDouble"
+#define BOOL_KEY   @"com.17stones.jupiterios.tests.cfgTestBool"
+#define STRING_VAL @"testValue"
+#define INT_VAL    17
+#define DOUBLE_VAL 17.0
+#define BOOL_VAL   YES
+
 @interface ConfigurationTests : SenTestCase
 
 @end
@@ -28,13 +37,26 @@
     [super tearDown];
 }
 
+- (void)deletedb
+{
+    NSFileManager * manager = [NSFileManager defaultManager];
+    [manager removeItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:@"config.db"] error:nil];
+}
+
 - (void)testInitCreatesEmptyConfigurationStore
 {
-//    STFail(@"Not implemented");
+    [self deletedb];
+    
+    Configuration * cfg = [[Configuration alloc] init];
+    NSDictionary * results = [cfg rawQueryWithSql:@"select * from properties"
+                                        forFields:[NSArray arrayWithObjects:@"propertyName", @"propertyValue", nil]];
+    STAssertNil(results, @"Initialized database not empty");
 }
 
 - (void)testInitDoesntCreateMultipleVersionRows
 {
+    [self deletedb];
+    
     {
         Configuration * cfg = [[Configuration alloc] init];
     }
@@ -47,56 +69,75 @@
     }
 }
 
-- (void)testSetStringProperty
+- (void)testSetAndGetStringProperty
 {
+    [self deletedb];
+    
     Configuration * cfg = [[Configuration alloc] init];
-    [cfg setPropertyNamed:@"com.17stones.jupiterios.tests.cfgTestString" toStringValue:@"testValue"];
-    NSString * result = [cfg getStringPropertyByName:@"com.17stones.jupiterios.tests.cfgTestString"];
-    STAssertTrue([result isEqualToString:@"testValue"], @"Configuration failed to set string");
+    [cfg setPropertyNamed:STRING_KEY toStringValue:STRING_VAL];
+    NSString * result = [cfg getStringPropertyByName:STRING_KEY];
+    STAssertTrue([result isEqualToString:STRING_VAL], @"String value retrieved from configuration differs from value set");
 }
 
-- (void)testSetIntegerProperty
+- (void)testSetAndGetIntegerProperty
 {
-//    STFail(@"Not implemented");
+    [self deletedb];
+    
+    Configuration * cfg = [[Configuration alloc] init];
+    [cfg setPropertyNamed:INT_KEY toIntegerValue:INT_VAL];
+    int result = [cfg getIntegerPropertyByName:INT_KEY];
+    STAssertEquals(INT_VAL, result, @"Int value retrieved from configuration differs from value set");
 }
 
-- (void)testSetDoubleProperty
+- (void)testSetAndGetDoubleProperty
 {
-//    STFail(@"Not implemented");
+    [self deletedb];
+    
+    Configuration * cfg = [[Configuration alloc] init];
+    [cfg setPropertyNamed:DOUBLE_KEY toIntegerValue:DOUBLE_VAL];
+    double result = [cfg getFloatPropertyByName:DOUBLE_KEY];
+    STAssertEquals(DOUBLE_VAL, result, @"Float value retrieved from configuration differs from value set");
 }
 
-- (void)testSetBooleanProperty
+- (void)testSetAndGetBooleanProperty
 {
-//    STFail(@"Not implemented");
+    [self deletedb];
+    
+    Configuration * cfg = [[Configuration alloc] init];
+    [cfg setPropertyNamed:BOOL_KEY toIntegerValue:BOOL_VAL];
+    BOOL result = [cfg getBooleanPropertyByName:BOOL_KEY];
+    STAssertEquals(BOOL_VAL, result, @"Boolean value retrieved from configuration differs from value set");
 }
 
 - (void)testInitUsesExistingConfigurationStore
 {
-//    STFail(@"Not implemented");
+    [self deletedb];
+    
+    {
+        Configuration * cfg = [[Configuration alloc] init];
+        [cfg setPropertyNamed:STRING_KEY toStringValue:STRING_VAL];
+        [cfg setPropertyNamed:INT_KEY toIntegerValue:INT_VAL];
+        [cfg setPropertyNamed:DOUBLE_KEY toFloatValue:DOUBLE_VAL];
+        [cfg setPropertyNamed:BOOL_KEY toBooleanValue:BOOL_VAL];
+    }
+    {
+        Configuration * cfg = [[Configuration alloc] init];
+        NSString * sresult = [cfg getStringPropertyByName:STRING_KEY];
+        STAssertTrue([sresult isEqualToString:STRING_VAL],
+                     @"String value retrieved from configuration differs from value set");
+        int iresult = [cfg getIntegerPropertyByName:INT_KEY];
+        STAssertEquals(INT_VAL, iresult, @"Int value retrieved from configuration differs from value set");
+        double dresult = [cfg getFloatPropertyByName:DOUBLE_KEY];
+        STAssertEquals(DOUBLE_VAL, dresult, @"Float value retrieved from configuration differs from value set");
+        BOOL bresult = [cfg getBooleanPropertyByName:BOOL_KEY];
+        STAssertEquals(BOOL_VAL, bresult, @"Boolean value retrieved from configuration differs from value set");
+    }
 }
 
 - (void)testInitRecreatesEmptyConfigurationStoreIfInvalid
 {
-//    STFail(@"Not implemented");
-}
-
-- (void)testGetStringProperty
-{
-//    STFail(@"Not implemented");
-}
-
-- (void)testGetIntegerProperty
-{
-//    STFail(@"Not implemented");
-}
-
-- (void)testGetDoubleProperty
-{
-//    STFail(@"Not implemented");
-}
-
-- (void)testGetBooleanProperty
-{
+    [self deletedb];
+    
 //    STFail(@"Not implemented");
 }
 

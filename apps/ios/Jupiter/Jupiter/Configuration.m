@@ -101,7 +101,7 @@
     [self setPropertyNamed:propertyName toStringValue:[NSString stringWithFormat:@"%f", propertyValue]];
 }
 
-- (void) setPropertyNamed:(NSString*)propertyName toBooleanValue:(bool)propertyValue
+- (void) setPropertyNamed:(NSString*)propertyName toBooleanValue:(BOOL)propertyValue
 {
     [self setPropertyNamed:propertyName toStringValue:[NSString stringWithFormat:@"%d", (propertyValue ? 1 : 0)]];
 }
@@ -132,9 +132,9 @@
     return [[self getStringPropertyByName:propertyName] doubleValue];
 }
 
-- (bool) getBooleanPropertyByName:(NSString*)propertyName;
+- (BOOL) getBooleanPropertyByName:(NSString*)propertyName;
 {
-    return [[self getStringPropertyByName:propertyName] intValue] == 1 ? true : false;
+    return [[self getStringPropertyByName:propertyName] intValue] == 1 ? YES : NO;
 }
 
 

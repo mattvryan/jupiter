@@ -13,12 +13,12 @@
 - (void) setPropertyNamed:(NSString*)propertyName toStringValue:(NSString*)propertyValue;
 - (void) setPropertyNamed:(NSString*)propertyName toIntegerValue:(int)propertyValue;
 - (void) setPropertyNamed:(NSString*)propertyName toFloatValue:(double)propertyValue;
-- (void) setPropertyNamed:(NSString*)propertyName toBooleanValue:(bool)propertyValue;
+- (void) setPropertyNamed:(NSString*)propertyName toBooleanValue:(BOOL)propertyValue;
 
 - (NSString*) getStringPropertyByName:  (NSString*)propertyName;
 - (int)       getIntegerPropertyByName: (NSString*)propertyName;
 - (double)    getFloatPropertyByName:   (NSString*)propertyName;
-- (bool)      getBooleanPropertyByName: (NSString*)propertyName;
+- (BOOL)      getBooleanPropertyByName: (NSString*)propertyName;
 
 - (NSDictionary*) rawQueryWithSql:(NSString*)sql forFields:(NSArray*)fields;
 
