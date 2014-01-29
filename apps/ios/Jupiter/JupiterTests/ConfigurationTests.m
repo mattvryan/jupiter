@@ -138,7 +138,28 @@
 {
     [self deletedb];
     
-//    STFail(@"Not implemented");
+    {
+        Configuration * cfg = [[Configuration alloc] init];
+        STAssertEquals(0, [cfg rawCommandWithSql:@"UPDATE meta SET version='2.0'"],
+                       @"Failed to update db with fake invalid version");
+        [cfg setPropertyNamed:STRING_KEY toStringValue:STRING_VAL];
+    }
+    {
+        Configuration * cfg = [[Configuration alloc] init];
+        NSDictionary * cfgVersion = [cfg rawQueryWithSql:@"SELECT version FROM meta"
+                                               forFields:[NSArray arrayWithObject:@"version"]];
+        STAssertNotNil(cfgVersion, @"No results returned from version select");
+        STAssertEquals(1U, [cfgVersion count], @"Too many results returned from vesion select");
+        STAssertTrue([@"1.0" isEqualToString:[cfgVersion objectForKey:@"version"]], @"Incorrect version returned from version select");
+        STAssertTrue([@"" isEqualToString:[cfg getStringPropertyByName:STRING_KEY]], @"Invalid data retained after recreating database");
+        
+        [cfg setPropertyNamed:STRING_KEY toStringValue:STRING_VAL];
+    }
+    {
+        Configuration * cfg = [[Configuration alloc] init];
+        STAssertTrue([STRING_VAL isEqualToString:[cfg getStringPropertyByName:STRING_KEY]],
+                     @"String value retrieved from configuration differs from value set");
+    }
 }
 
 @end

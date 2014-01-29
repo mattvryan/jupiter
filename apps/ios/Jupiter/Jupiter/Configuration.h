@@ -21,5 +21,6 @@
 - (BOOL)      getBooleanPropertyByName: (NSString*)propertyName;
 
 - (NSDictionary*) rawQueryWithSql:(NSString*)sql forFields:(NSArray*)fields;
+- (int)         rawCommandWithSql:(NSString*)sql;
 
 @end

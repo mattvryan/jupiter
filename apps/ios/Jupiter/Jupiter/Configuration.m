@@ -39,7 +39,7 @@
         {
             NSLog(@"Failed to open configuration database %@", self.cfgDir);
         }
-        else if (0 != [self initializeConfigDb])
+        else if (0 != [self initializeConfigDb:0])
         {
             NSLog(@"Failed to initialize configuration database");
         }
@@ -47,22 +47,32 @@
     return self;
 }
 
-- (int) initializeConfigDb
+- (int) initializeConfigDb:(int)nAttempts
 {
+    if (++nAttempts > 2)
+    {
+        return -1;
+    }
+    
     NSArray * tableNames = [NSArray arrayWithObjects:@"meta", @"properties", nil];
     NSArray * tableFields = [NSArray arrayWithObjects:@"version TEXT", @"propertyName TEXT UNIQUE, propertyValue TEXT", nil];
     NSDictionary * tables = [NSDictionary dictionaryWithObjects:tableFields forKeys:tableNames];
     
+    int rv = 0;
     for (NSString * tableName in [tables keyEnumerator])
     {
         // First look for the version table
         // If you can't select from it then create the table
         // If you can, then verify the version - then update it if necessary
-        int rv = [self sqliteCreateTable:tableName fields:[tables objectForKey:tableName]];
+        rv = [self sqliteCreateTable:tableName fields:[tables objectForKey:tableName]];
         if (0 != rv)
         {
             return rv;
         }
+    }
+    
+    if (0 == rv)
+    {
         NSDictionary * meta = [self rawQueryWithSql:@"select * from meta"
                                           forFields:[NSArray arrayWithObjects:@"id", @"version", nil]];
         if (nil == meta)
@@ -77,10 +87,25 @@
         else if (! [[meta objectForKey:@"version"] isEqualToString:@"1.0"])
         {
             NSLog(@"Unexpected configuration version - expected 1.0 but found %@", [meta objectForKey:@"version"]);
-            return -1;
+            
+            // If the version is older, we would upgrade here (future).
+            // If the version is newer, this is a problem - we throw everything away and rebuild the database.
+            double currentVersion = [[meta objectForKey:@"version"] doubleValue];
+            if (currentVersion > 1.0)
+            {
+                rv = [self rawCommandWithSql:@"DROP TABLE IF EXISTS properties"];
+                if (0 == rv)
+                {
+                    rv = [self rawCommandWithSql:@"DROP TABLE IF EXISTS meta"];
+                    if (0 == rv)
+                    {
+                        rv = [self initializeConfigDb:nAttempts];
+                    }
+                }
+            }
         }
     }
-    return 0;
+    return rv;
 }
 
 
@@ -171,7 +196,6 @@
     return [self rawQueryWithSql:selectStatement forFields:fields];
 }
 
-
 - (NSDictionary*) rawQueryWithSql:(NSString*)sql forFields:(NSArray*)fields
 {
     sqlite3_stmt * preparedStatement;
@@ -204,6 +228,11 @@
     }
     
     return [results count] > 0 ? results : nil;
+}
+
+- (int) rawCommandWithSql:(NSString*)sql
+{
+    return sqlite3_exec(_db, [sql UTF8String], nil, nil, nil);
 }
 
 @end
